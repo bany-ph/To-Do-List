@@ -9,15 +9,9 @@ body {
   font-size: 1.2rem;
 }
 
-body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
-}
-
 h1 {
   text-align: center;
   letter-spacing: 4px;
-  
 }
 
 .container {
@@ -63,30 +57,22 @@ input {
   color: var(--primary-color);
   font-size: 15px;
   transition: .3s;
-  opacity: .8;
   margin-left: 1rem;
 }
 
 .icon:hover{
   opacity: 1;
   cursor: pointer;
- color: red;
+  color: red;
 }
-
-
-
 
 
 .task-list{
     margin-top: 1em;
-    width: min-content;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-
     & > div {
       width: 20rem;
-    
+
       align-items: center;
       justify-content: center;
       justify-content: space-between;
@@ -101,17 +87,7 @@ input {
 }
 
 
-.task {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
- 
-}
 
 
-@media (min-width: 768px){
-  .task-list{
-    width: 50%; 
-}
-}
+
+
