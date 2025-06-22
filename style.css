@@ -17,6 +17,7 @@ body {
 h1 {
   text-align: center;
   letter-spacing: 4px;
+  
 }
 
 .container {
@@ -83,25 +84,22 @@ input {
     flex-direction: column;
     align-items: center;
 
-    & div{
+    & > div {
       width: 20rem;
-      display: flex;
+    
       align-items: center;
       justify-content: center;
       justify-content: space-between;
       overflow:auto;
     }
+    & div{
+        margin: 0;
+       display: flex;
+       align-items: center;
+    }
+    
 }
-/* .task::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  border-radius: 100%;
-  background: var(--primary-color);
-  text-align: center;
-  cursor: pointer;
-} */
+
 
 .task {
     padding: 1rem;

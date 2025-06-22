@@ -2,12 +2,7 @@ const add = document.getElementById("add-task");
 
 const containerList = document.querySelector(".task-list")
 add.addEventListener("click", function(event){
-    
     event.preventDefault();
-    
-
-
-    let div = document.createElement("div");
     const taskName = document.querySelector("#task-name").value;
 
     if(taskName == '') { //check if the input is empty
@@ -15,7 +10,8 @@ add.addEventListener("click", function(event){
         return // stops the event
     }
 
-    /*create and show the task in <p> */
+    /*create div comtainer and show the task in <p> */
+    let div = document.createElement("div");
     const p = document.createElement("p")
     p.textContent = taskName;
     div.appendChild(p);
@@ -23,37 +19,52 @@ add.addEventListener("click", function(event){
 
 
   
+    /* create sub container for checkbox and icon */
+    const subDiv = document.createElement("div")
+
+
+
+    /* create and show checkbox */
+    const input = document.createElement("input")
+    input.type = "checkbox";
+    subDiv.appendChild(input);
+
+
+
 
     /* create and show the delete icon */
     const icon = document.createElement("i");
     icon.className = "fa-solid fa-trash icon"
-    div.appendChild(icon) 
+    subDiv.appendChild(icon) 
     
 
-      /* check box */
-    /*   const check = document.createElement("i");
-      check.className = "icon-check";
-      div.insertBefore(check, p);
-      
-   */
+
+    /* show icons and checkbox*/
+    div.appendChild(subDiv);
+
 
 
    /* delete task */
-    
+    icon.onclick = function () {
+        div.remove();
+    } 
+
+    /* change task status */
+    input.onclick = function(){
+        if(input.checked){
+            p.style.textDecoration = "line-through"
+            p.style.color = "grey"
+        }else{
+            p.style.textDecoration = "none"
+            p.style.color = "black"
+        }
+       
+    }
+
 
 
     document.getElementById("task-name").value = "" // clear the input
 })
 
-document.body.addEventListener("click", nose('icon', containerList))
 
-function nose(classs, contenedor, event) {
-    if (event.target.classList.contains(classs)) {
-        const li = event.target.parentElement;
-        contenedor.removeChild(li);
-    }
-}
 
-// icon.onclick = function () {
-//         div.remove();
-//     }
